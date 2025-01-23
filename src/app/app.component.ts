@@ -8,7 +8,7 @@ import { PopupComponent } from './popup/popup.component';
     <a href="https://angular.dev/guide/elements#limitations" target="_blank">example from docs in a new CLI project with latest 19.1.3 framework 19.1.4 cli patches</a>
     <!-- <button type="button" (click)="popup.showAsComponent(input.value)">Show as component</button>
     <button type="button" (click)="popup.showAsElement(input.value)">Show as element</button> -->
-    <my-popup message="hey" />
+    <!-- <my-popup message="hey" /> -->
   `,
   providers: [PopupService],
   imports: [PopupComponent],
@@ -22,5 +22,7 @@ export class AppComponent {
     const PopupElement = createCustomElement(PopupComponent, {injector});
     // Register the custom element with the browser.
     customElements.define('popup-element', PopupElement);
+
+    this.popup.showAsElement('hey')
   }
 }
